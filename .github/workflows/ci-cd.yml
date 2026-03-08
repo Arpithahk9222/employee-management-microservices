@@ -1,5 +1,7 @@
 name: Employee Service CI Pipeline
 
+
+
 on:
   push:
     branches:
@@ -20,6 +22,9 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+
+      - name: Give execute permission to mvnw
+        run: chmod +x mvnw
 
       - name: Build with Maven
         run: ./mvnw clean package -DskipTests
