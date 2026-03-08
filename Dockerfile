@@ -1,8 +1,8 @@
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jdk
 
 WORKDIR /app
 
-COPY target/employee-service.jar app.jar
+COPY target/*.jar app.jar
 
 EXPOSE 8081
 
