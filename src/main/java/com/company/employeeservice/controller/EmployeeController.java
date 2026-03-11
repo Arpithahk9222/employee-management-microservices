@@ -6,20 +6,24 @@ import com.company.employeeservice.service.EmployeeService;
 import com.company.employeeservice.service.EmployeeServiceImplementation;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/Employees")
+@RequestMapping("api/v1/Employees")
 public class EmployeeController {
 
     private final EmployeeService employeeService;
     @PostMapping
     public Employee CreateEmployee(@Valid @RequestBody EmployeeCreateDTO employee){
         return employeeService.createNewEmployee(employee);
+    }
+
+    @GetMapping
+    public List<Employee> getAllemployees(){
+        return employeeService.getEmployees();
     }
 
 
