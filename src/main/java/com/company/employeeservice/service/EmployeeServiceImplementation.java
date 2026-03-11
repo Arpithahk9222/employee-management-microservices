@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class EmployeeServiceImplementation implements  EmployeeService{
@@ -23,5 +25,10 @@ public class EmployeeServiceImplementation implements  EmployeeService{
       employee.setDesignation(newEmployee.getDesignation());
       employee.setSalary(newEmployee.getSalary());
       return employeeRepository.save(employee);
+    }
+
+    @Override
+    public List<Employee> getEmployees() {
+        return employeeRepository.findAll();
     }
 }
