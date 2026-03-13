@@ -13,7 +13,7 @@ public class EmployeeCreateDTO {
     @Email(message = "Invalid Email format")
     private String email;
 
-    private String department;
+    private Long departmentId;
     private String designation;
     @NotNull(message = "Salary cannot be null")
     @Positive(message = "Salary Must be Greater than 0")

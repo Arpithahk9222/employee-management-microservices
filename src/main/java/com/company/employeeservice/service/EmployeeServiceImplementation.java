@@ -21,7 +21,7 @@ public class EmployeeServiceImplementation implements  EmployeeService{
       Employee employee= new Employee();
       employee.setName(newEmployee.getName());
       employee.setEmail(newEmployee.getEmail());
-      employee.setDepartment(newEmployee.getDepartment());
+      employee.setDepartmentId(newEmployee.getDepartmentId());
       employee.setDesignation(newEmployee.getDesignation());
       employee.setSalary(newEmployee.getSalary());
       return employeeRepository.save(employee);
@@ -30,5 +30,10 @@ public class EmployeeServiceImplementation implements  EmployeeService{
     @Override
     public List<Employee> getEmployees() {
         return employeeRepository.findAll();
+    }
+
+    @Override
+    public Employee updateemployee(Long id) {
+      return null;
     }
 }

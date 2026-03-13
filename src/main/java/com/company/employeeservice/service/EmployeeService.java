@@ -10,5 +10,6 @@ import java.util.List;
 public interface EmployeeService{
     public Employee createNewEmployee(EmployeeCreateDTO newEmployee);
     public List<Employee> getEmployees();
+    public Employee updateemployee(Long id);
 
 }
