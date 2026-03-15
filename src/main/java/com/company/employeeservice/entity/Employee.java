@@ -26,7 +26,8 @@ public class Employee {
     @NotBlank(message = "Email can't be empty")
     @Email(message = "Invalid Email format")
     private String email;
-
+/*In microservices, relationships are not maintained through database foreign keys. Instead,
+    services store reference IDs and fetch related data using inter-service communication via REST APIs or messaging.*/
     private Long departmentId;
     private String designation;
 
